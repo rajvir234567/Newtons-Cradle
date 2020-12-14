@@ -12,7 +12,10 @@ class Rope{
         this.rope = constraint.create(options);
         World.add(world, this.rope);
     }
-
+    attach(body){
+        this.sling.bodyA = body;
+    }
+    
     fly(){
         this.sling.bodyA = null;
     }

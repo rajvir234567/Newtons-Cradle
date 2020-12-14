@@ -48,5 +48,22 @@ function draw() {
  
 }
 
+function mouseDragged(){
+    if (gameState!=="launched"){
+        Matter.Body.setPosition(bobObject1.body, {x: mouseX , y: mouseY});
+    }
+}
+function mouseReleased(){
+    rope.fly();
+    gameState = "launched";
+}
+
+function keyPressed(){
+    if(keyCode === 32 && bobObject1.body.speed < 1){
+	   bobObject1.trajectory = [];
+       Matter.Body.setPosition(bobObject1.body,{x:200, y:50});
+       slingshot.attach(bobObject1.body);
+    }
+}
 
 
