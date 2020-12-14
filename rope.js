@@ -13,19 +13,19 @@ class Rope{
         World.add(world, this.rope);
     }
     attach(body){
-        this.sling.bodyA = body;
+        this.rope.bodyA = body;
     }
     
     fly(){
-        this.sling.bodyA = null;
+        this.rope.bodyA = null;
     }
 
     display(){
         if(this.sling.bodyA){
-            var pointA = this.sling.bodyA.position;
+            var pointA = this.rope.bodyA.position;
             var pointB = this.pointB;
 
-                line(pointA.x, pointA.y, pointB.x, pointB.y); 
+            line(pointA.x, pointA.y, pointB.x, pointB.y); 
         }
     }
 }
