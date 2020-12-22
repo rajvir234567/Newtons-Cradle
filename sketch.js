@@ -1,4 +1,3 @@
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -20,15 +19,13 @@ function setup() {
 	bobObject3 = new Bob(400,300);
 	bobObject4 = new Bob(450,300);
 	bobObject5 = new Bob(500,300);
-	rope1 = new Rope(bobObject1.body, roof.body, this.bobObject1.radius, 0);
-	rope2 = new Rope(bobObject2.body, roof.body, this.bobObject2.radius, 0);
-	rope3 = new Rope(bobObject3.body, roof.body, this.bobObject3.radius, 0);
-	rope4 = new Rope(bobObject4.body, roof.body, this.bobObject4.radius, 0);
-	rope5 = new Rope(bobObject5.body, roof.body, this.bobObject5.radius, 0);
-
+	rope1 = new Rope(bobObject1.body, roof.body, -100, 0);
+	rope2 = new Rope(bobObject2.body, roof.body, -50, 0);
+	rope3 = new Rope(bobObject3.body, roof.body, 0, 0);
+	rope4 = new Rope(bobObject4.body, roof.body, 50, 0);
+	rope5 = new Rope(bobObject5.body, roof.body, 100, 0);
 	
 }
-
 
 function draw() {
 	rectMode(CENTER);
@@ -50,7 +47,7 @@ function draw() {
 
 function mouseDragged(){
     if (gameState!=="launched"){
-        Matter.Body.setPosition(bobObject1.body, {x: mouseX , y: mouseY});
+        Matter.Body.setPosition(bobObject1.body.position, {x: mouseX , y: mouseY});
     }
 }
 function mouseReleased(){

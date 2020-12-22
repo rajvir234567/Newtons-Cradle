@@ -21,9 +21,9 @@ class Rope{
     }
 
     display(){
-        if(this.sling.bodyA){
+        if(this.rope.bodyA){
             var pointA = this.rope.bodyA.position;
-            var pointB = this.pointB;
+            var pointB = this.rope.bodyB.position;
 
             line(pointA.x, pointA.y, pointB.x, pointB.y); 
         }
