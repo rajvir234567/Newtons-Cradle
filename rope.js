@@ -10,6 +10,8 @@ class Rope{
         }
         //console.log(options)
         this.rope = constraint.create(options);
+        this.offsetX = offsetX;
+        this.ooffsetY = offsetY
         World.add(world, this.rope);
     }
     attach(body){
@@ -22,10 +24,12 @@ class Rope{
 
     display(){
         if(this.rope.bodyA){
+            //bob body
             var pointA = this.rope.bodyA.position;
+            //roof body + offsetX
             var pointB = this.rope.bodyB.position;
 
-            line(pointA.x, pointA.y, pointB.x, pointB.y); 
+            line(pointA.x, pointA.y, pointB.x+this.offsetX, pointB.y+this.offsetY); 
         }
     }
 }
